@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estudiantes de Programación</title>
+    <style>
+        table { border-collapse: collapse; width: 60%; margin: 20px 0; font-family: Arial, sans-serif; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        /* Clase CSS para resaltar */
+        .resaltado { background-color: #d4edda; font-weight: bold; color: #155724; }
+    </style>
+</head>
+<body>
+    <h1>Reporte de Notas: Cursos de Programación</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Estudiante</th>
+                <th>Curso de Programación</th>
+                <th>Nota</th>
+                <th>Nivel</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Bucle #each para iterar la lista enviada por el servidor -->
+            {{#each estudiantes}}
+            <!-- Uso de #if para asignar una clase y resaltar si cumple la condición -->
+            <tr {{#if destacado}}class="resaltado"{{/if}}>
+                <td>{{nombre}}</td>
+                <td>{{curso}}</td>
+                <td>{{nota}}</td>
+                <td>
+                    {{#if destacado}}
+                        ⭐ Sobresaliente
+                    {{else}}
+                        Normal
+                    {{/if}}
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">Volver al inicio</a>
+</body>
+</html>
