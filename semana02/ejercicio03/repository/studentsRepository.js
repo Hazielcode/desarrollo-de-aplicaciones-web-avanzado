@@ -44,8 +44,8 @@ function getByStatus(status) {
 }
 
 function getByGrade(grade) {
-    // Filtrar a los que tienen un promedio mayor o igual al proporcionado
-    return students.filter(s => s.grade >= grade);
+    // Filtrar a los que tienen exactamente el promedio proporcionado
+    return students.filter(s => s.grade === grade);
 }
 
 function create(student) {
