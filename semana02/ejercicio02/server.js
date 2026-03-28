@@ -3,7 +3,7 @@ const fs = require('fs');
 const Handlebars = require('handlebars');
 const path = require('path');
 
-const port = 3000;
+const port = 3002;
 
 function renderView(viewName, data, res) {
     const viewPath = path.join(__dirname, 'views', viewName + '.hbs');
