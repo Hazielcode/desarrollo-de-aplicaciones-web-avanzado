@@ -1,0 +1,3 @@
+Gemini ha dicho
+¡Ah, el clásico error de "No se reconoce"! No te preocupes, esto pasa más de lo que crees.
+Lo que sucede es que en tu terminal anterior (CMD) funcionaba, pero en esta nueva (PowerShell, que es la que sale en VS Code) todavía no se han actualizado las "rutas" (el PATH) de tu sistema. PowerShell es un poco más estricto con esto.
