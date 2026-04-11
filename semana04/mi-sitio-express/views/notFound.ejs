@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Página no encontrada</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="grey lighten-4">
+    <nav class="teal lighten-2">
+      <div class="nav-wrapper container">
+        <a href="/" class="brand-logo">Mi Sitio</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/about">Acerca de</a></li>
+          <li><a href="/contact">Contacto</a></li>
+          <li><a href="/admin">Admin</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container center-align" style="margin-top: 50px;">
+        <i class="large material-icons red-text text-lighten-1">error_outline</i>
+        <h3 class="red-text text-darken-2">404 - Página no encontrada</h3>
+        <p class="flow-text">La ruta <strong><%= url %></strong> no existe en este sitio.</p>
+
+        <a href="/" class="waves-effect waves-light btn-large teal" style="margin-top: 20px;">
+            <i class="material-icons left">home</i>Volver al inicio
+        </a>
+    </div>
+</body>
+</html>

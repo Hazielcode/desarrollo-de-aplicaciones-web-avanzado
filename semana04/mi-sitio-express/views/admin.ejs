@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <!-- Compiled and minified CSS Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav class="teal lighten-2">
+      <div class="nav-wrapper container">
+        <a href="/" class="brand-logo">Mi Sitio</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/about">Acerca de</a></li>
+          <li><a href="/contact">Contacto</a></li>
+          <li class="active"><a href="/admin">Admin</a></li>
+          <li><a href="/gravastar">GravaStar</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container" style="margin-top: 40px;">
+        <h2 class="center-align teal-text">Panel de Administración</h2>
+        <p class="flow-text center-align">Mensajes recibidos desde el formulario de contacto.</p>
+        
+        <div class="row">
+            <div class="col s12 m10 offset-m1">
+                <% if (messages && messages.length > 0) { %>
+                    <ul class="collection">
+                        <% messages.forEach(function(msg) { %>
+                            <li class="collection-item avatar">
+                                <i class="material-icons circle teal">assignment_ind</i>
+                                <span class="title"><strong><%= msg.nombre %></strong></span>
+                                <p>
+                                    <a href="mailto:<%= msg.email %>"><%= msg.email %></a><br>
+                                    <br>
+                                    <em><%= msg.mensaje %></em>
+                                </p>
+                            </li>
+                        <% }); %>
+                    </ul>
+                <% } else { %>
+                    <div class="card-panel teal lighten-5">
+                        <p class="teal-text text-darken-3 center-align">No hay mensajes por el momento.</p>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compiled and minified JavaScript Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

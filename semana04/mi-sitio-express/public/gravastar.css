@@ -1,0 +1,116 @@
+body.gravastar-theme {
+    background-color: #0d1117;
+    color: #e6edf3;
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+}
+
+
+/* Navbar Meca / Cyberpunk */
+.gravastar-nav {
+    background-color: #161b22 !important;
+    border-bottom: 2px solid #58a6ff;
+    box-shadow: 0 0 10px rgba(88, 166, 255, 0.4);
+}
+
+.gravastar-nav .brand-logo {
+    color: #58a6ff !important;
+    font-weight: 900;
+    letter-spacing: 2px;
+    position: relative !important;
+    float: left;
+    margin-left: 10px;
+}
+
+.gravastar-nav ul li a {
+    color: #e6edf3 !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.gravastar-nav ul li a:hover, .gravastar-nav ul li.active {
+    background-color: rgba(88, 166, 255, 0.1) !important;
+    color: #58a6ff !important;
+}
+
+/* Paneles de Control (Cards) */
+.gravastar-theme .card-panel {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+    color: #c9d1d9;
+    padding: 30px;
+}
+
+/* Inputs de Texto estilo Cyber */
+.gravastar-theme .input-field {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.gravastar-theme input[type=text],
+.gravastar-theme input[type=email],
+.gravastar-theme textarea.materialize-textarea {
+    color: #58a6ff !important;
+    border-bottom: 1px solid #8b949e !important;
+}
+
+.gravastar-theme input:focus,
+.gravastar-theme textarea:focus {
+    border-bottom: 1px solid #58a6ff !important;
+    box-shadow: 0 1px 0 0 #58a6ff !important;
+}
+
+.gravastar-theme .input-field label {
+    color: #8b949e !important;
+}
+.gravastar-theme .input-field label.active {
+    color: #58a6ff !important;
+}
+
+/* Botones Neon */
+.gravastar-btn {
+    background-color: transparent !important;
+    border: 2px solid #238636 !important;
+    color: #2ea043 !important;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: all 0.3s;
+    margin-top: 15px;
+}
+
+.gravastar-btn:hover {
+    background-color: #238636 !important;
+    color: white !important;
+    box-shadow: 0 0 10px rgba(35, 134, 54, 0.6) !important;
+}
+
+/* Titulos */
+.gravastar-title {
+    color: #58a6ff;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* Tablas */
+.gravastar-theme table {
+    border-collapse: collapse;
+}
+.gravastar-theme table.striped > tbody > tr:nth-child(odd) {
+    background-color: #0d1117; /* Override Materialize light gray */
+}
+.gravastar-theme table.striped > tbody > tr:nth-child(even) {
+    background-color: #161b22;
+}
+.gravastar-theme th {
+    color: #58a6ff;
+    border-bottom: 2px solid #30363d;
+    padding: 15px 10px;
+}
+.gravastar-theme td {
+    border-bottom: 1px solid #21262d;
+    padding: 15px 10px;
+}

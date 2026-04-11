@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <!-- Compiled and minified CSS Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav class="teal lighten-2">
+      <div class="nav-wrapper container">
+        <a href="/" class="brand-logo">Mi Sitio</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/about">Acerca de</a></li>
+          <li><a href="/contact">Contacto</a></li>
+          <li><a href="/admin">Admin</a></li>
+          <li class="active"><a href="/pokedex">Pokédex</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container" style="margin-top: 40px;">
+        <h2 class="center-align red-text text-darken-3">Tu Pokédex Personal</h2>
+        
+        <div class="row">
+            <!-- Formulario para Registrar Nuevo Pokémon -->
+            <div class="col s12 m4">
+                <div class="card-panel">
+                    <h5 class="center-align">Registrar Avistamiento</h5>
+                    <form action="/pokedex" method="POST">
+                        <div class="input-field">
+                            <input id="numero" name="numero" type="text" required>
+                            <label for="numero">Número (Ej. 025)</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="nombre" name="nombre" type="text" required>
+                            <label for="nombre">Nombre</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="tipo" name="tipo" type="text" required>
+                            <label for="tipo">Tipo(s)</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="region" name="region" type="text" required>
+                            <label for="region">Región</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="peso" name="peso" type="text" required>
+                            <label for="peso">Peso</label>
+                        </div>
+                        <button class="btn waves-effect waves-light red darken-2 w-100" type="submit" style="width: 100%;">Registrar
+                            <i class="material-icons right">add_circle</i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Tabla de Pokémon Registrados -->
+            <div class="col s12 m8">
+                <div class="card-panel">
+                    <h5 class="center-align">Pokémon Registrados</h5>
+                    <table class="striped responsive-table">
+                        <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>Nombre</th>
+                                <th>Tipo</th>
+                                <th>Región</th>
+                                <th>Peso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if (pokemons && pokemons.length > 0) { %>
+                                <% pokemons.forEach(function(pokemon) { %>
+                                    <tr>
+                                        <td>#<%= pokemon.numero %></td>
+                                        <td><strong><%= pokemon.nombre %></strong></td>
+                                        <td><span class="new badge red" data-badge-caption=""><%= pokemon.tipo %></span></td>
+                                        <td><%= pokemon.region %></td>
+                                        <td><%= pokemon.peso %></td>
+                                    </tr>
+                                <% }); %>
+                            <% } else { %>
+                                <tr>
+                                    <td colspan="5" class="center-align">Aún no hay registros en la Pokédex.</td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compiled and minified JavaScript Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

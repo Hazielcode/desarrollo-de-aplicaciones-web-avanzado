@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <!-- Compiled and minified CSS Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/gravastar.css">
+</head>
+<body class="gravastar-theme">
+    <nav class="gravastar-nav">
+      <div class="nav-wrapper container">
+        <a href="/" class="brand-logo">G-STAR HANGAR</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/about">Acerca de</a></li>
+          <li><a href="/contact">Contacto</a></li>
+          <li><a href="/admin">Admin</a></li>
+          <li class="active"><a href="/gravastar">GravaStar</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container" style="margin-top: 40px;">
+        <h2 class="center-align gravastar-title">Registro de Tecnología Extraterrestre</h2>
+        
+        <div class="row">
+            <!-- Formulario de Registro Tecnológico -->
+            <div class="col s12 m4">
+                <div class="card-panel">
+                    <h5 class="center-align gravastar-title" style="font-size: 1.5rem;">Cargar Artefacto</h5>
+                    <form action="/gravastar" method="POST">
+                        <div class="input-field">
+                            <input id="modelo" name="modelo" type="text" required>
+                            <label for="modelo">Modelo (Ej: Supernova)</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="tipo" name="tipo" type="text" required>
+                            <label for="tipo">Tipo / Clase</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="acabado" name="acabado" type="text" required>
+                            <label for="acabado">Pintura / Acabado</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="luces" name="luces" type="text" required>
+                            <label for="luces">Color Glosync (RGB)</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="energia" name="energia" type="text" required>
+                            <label for="energia">Nivel de Energía (%)</label>
+                        </div>
+                        <button class="btn gravastar-btn" type="submit" style="width: 100%;">
+                            <i class="material-icons left">power_settings_new</i> Iniciar Secuencia
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Panel de Dispositivos Activos -->
+            <div class="col s12 m8">
+                <div class="card-panel">
+                    <h5 class="center-align gravastar-title" style="font-size: 1.5rem;">Equipos en Suspensión</h5>
+                    <table class="striped responsive-table">
+                        <thead>
+                            <tr>
+                                <th>Modelo</th>
+                                <th>Tipo</th>
+                                <th>Mecha Acabado</th>
+                                <th>Iluminación RGB</th>
+                                <th>Energía</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if (inventario && inventario.length > 0) { %>
+                                <% inventario.forEach(function(item) { %>
+                                    <tr>
+                                        <td><strong><%= item.modelo %></strong></td>
+                                        <td><%= item.tipo %></td>
+                                        <td><%= item.acabado %></td>
+                                        <td><span style="color:<%= item.luces.includes('Verde') ? '#2ea043' : (item.luces.includes('Azul') ? '#58a6ff' : '#66fcf1') %>; text-shadow: 0 0 5px currentColor;"><%= item.luces %></span></td>
+                                        <td><%= item.energia %></td>
+                                    </tr>
+                                <% }); %>
+                            <% } else { %>
+                                <tr>
+                                    <td colspan="5" class="center-align">Inventario Vacío. Esperando Carga Mecánica.</td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compiled and minified JavaScript Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
